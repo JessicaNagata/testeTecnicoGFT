@@ -1,16 +1,48 @@
 package exercicio3;
 
+import java.util.ArrayList;
 import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 public class mainExercicio_3 {
+    
+    //Jesus....não deu tempo rs
 
     public static void main(String[] args) {
-       Scanner ler = new Scanner(System.in);
+      String usuario;
+      String texto;
+      String reacoes;
+      String linkImagem;
+      String linkVideo;
+      
+      Mensagem msg;
+      
+      ArrayList<Mensagem> listaMensagens = new ArrayList();
+      
+      usuario = JOptionPane.showInputDialog("Usuário: ");
+      texto = JOptionPane.showInputDialog("Mensagem: ");
+      reacoes = JOptionPane.showInputDialog("Reação: ");
+      msg = new Mensagem(usuario, texto, reacoes);
+      listaMensagens.add(msg);
+      
+      
+      usuario = JOptionPane.showInputDialog("Usuário: ");
+      texto = JOptionPane.showInputDialog("Mensagem: ");
+      reacoes = JOptionPane.showInputDialog("Reação: ");
+      linkVideo = JOptionPane.showInputDialog("Link vídeo: ");
+      msg = new MensagemVideo(linkVideo, usuario, texto, reacoes);
+      listaMensagens.add(msg);
+      
+      usuario = JOptionPane.showInputDialog("Usuário: ");
+      texto = JOptionPane.showInputDialog("Mensagem: ");
+      reacoes = JOptionPane.showInputDialog("Reação: ");
+      linkImagem = JOptionPane.showInputDialog("Link imagem: ");
+      msg = new MensagemImagem(linkImagem, usuario, texto, reacoes);
+      listaMensagens.add(msg);
        
-       String usuario1;
-       String usuario2;
-       String usuario3;
-       
+       for(Mensagem item: listaMensagens){
+       JOptionPane.showMessageDialog(null, item.toString());
+       }
        
     }
     
